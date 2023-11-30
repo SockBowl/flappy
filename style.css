@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.game-container {
+  width: 500px;
+  height: 560px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  display: grid;
+}
+
+.sky {
+  background-image: url('./flappy-bird-assets-master/sprites/background-day.png');
+  width: 500px;
+  height: 450px;
+  position: absolute;
+}
+
+.ground {
+  background-image: url('./flappy-bird-assets-master/sprites/base.png');
+  width: 500px;
+  height: 110px;
+  position: absolute;
+  top: 450px;
+  z-index: 1;
+}
+
+.bird {
+  background-image: url('./flappy-bird-assets-master/sprites/yellowbird-midflap.png');
+  position: absolute;
+  width: 34px;
+  height: 24px;
+  opacity: 0;
+}
+
+.lower-pipe {
+  background-image: url('./flappy-bird-assets-master/sprites/pipe-green.png');
+  width: 52px;
+  height: 320px;
+  position: absolute;
+}
+
+.upper-pipe {
+  background-image: url('./flappy-bird-assets-master/sprites/pipe-green.png');
+  transform: rotate(180deg) scaleX(-1);
+  width: 52px;
+  height: 320px;
+  position: absolute;
+}
+
+.score-container {
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+}
+
+.score {
+  width: 50px;
+  height: 100px;
+}
+
+.start-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  z-index: 3;
+}
+
+.start-img {
+  justify-self: center;
+  align-self: center;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  height: 150px;
+  line-height: 50px;
+  position: fixed;
+  align-self: center;
+  justify-self: center;
+  background-color: #f5dfad;
+  color: #ff841f;
+  border: solid #ffffff 2px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: -1;
+}
+
+.end-score-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 40px;
+  font-family: 'Press Start 2P', sans-serif;
+  font-weight: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.restart-btn {
+  font-family: 'Press Start 2P', sans-serif;
+  font-weight: 0;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #ff841f;
+  padding: 3px 5px 1px 7px;
+  margin-top: 10px;
+  border: solid #ffffff 2px;
+  box-shadow: rgb(138, 99, 99) 1px 1px 0px 2px;
+  border-radius: 2px;
+  transition: 1000ms;
+  transform: translateY(0);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+.restart-btn:hover {
+  opacity: 0.7;
+}

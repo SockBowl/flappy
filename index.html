@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flappy Bird</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="game-container">
+      <div class="sky">
+        <div class="score-container"></div>
+        <div class="bird"></div>
+      </div>
+      <div class="ground"></div>
+      <div class="start-container">
+        <img
+          class="start-img"
+          src="./flappy-bird-assets-master/sprites/message.png"
+        />
+      </div>
+      <div class="modal">
+        <div class="end-score-container">
+          <div class="current">
+            Current
+            <div class="current-score">
+              <img src="./flappy-bird-assets-master/sprites/0.png" />
+            </div>
+          </div>
+          <div class="best">
+            Best
+            <div class="best-score">
+              <!-- <img src="./flappy-bird-assets-master/sprites/0.png" /> -->
+            </div>
+          </div>
+        </div>
+        <button class="restart-btn">restart</button>
+      </div>
+    </div>
+  </body>
+</html>
