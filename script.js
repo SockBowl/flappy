@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const bestScore = document.querySelector('.best-score');
   const flapArr = ['downflap', 'midflap', 'upflap'];
 
-  let birdLeft = 220;
+  let birdLeft = 208;
   let birdBottom = 225;
   let gravity = 3;
   let gap = 430;
@@ -127,19 +127,21 @@ document.addEventListener('DOMContentLoaded', () => {
         gameOver();
       }
 
-      if (pipeLeft < 186 && pipeLeft > 182) {
+      //checking to see if the pipe is between these 4 px because the pipe is moving 4 px each interval
+      //this is when the bird is just past the pipe
+      if (pipeLeft < 174 && pipeLeft > 170) {
         updateScore();
       }
     }
     let moveTimer = setInterval(movePipe, 15);
-    if (!isGameOver) pipeTimer = setTimeout(generatePipe, 3000);
+    if (!isGameOver) pipeTimer = setTimeout(generatePipe, 1300);
   }
 
   function gameOver() {
+    isGameOver = true;
     clearInterval(birdTimer);
     clearInterval(flapTimer);
     clearTimeout(pipeTimer);
-    isGameOver = true;
     document.removeEventListener('keydown', jumpControl);
     document.removeEventListener('click', jumpControl);
     setModal();
@@ -147,14 +149,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function collisionCheck(pipeLeft, pipeBottom) {
     if (
-      pipeLeft > 186 &&
-      pipeLeft < 254 &&
+      pipeLeft > 174 &&
+      pipeLeft < 242 &&
       (birdBottom < pipeBottom + 210 || birdBottom > pipeBottom + gap - 134)
       //134 is .ground height and .bird height combined.
       //210 is .pipe height subtract .ground height
     )
       return true;
     if (birdBottom <= 0) return true;
+    if (birdBottom > 426) return true;
     return false;
   }
 
